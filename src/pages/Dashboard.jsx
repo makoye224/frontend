@@ -1,44 +1,23 @@
-
+ 
   import { Card, Carousel} from 'react-bootstrap';
   import { FaPalette, FaTrademark, FaBullhorn, FaFacebookSquare, FaTwitter, FaInstagram} from 'react-icons/fa';
   import CustomModal from '../components/ CustomModal';
   import { useNavigate } from 'react-router-dom'
-  import React, { useState , useRef, useEffect} from 'react';
+  import React, { useState , useRef, useEffect, useContext, useMemo } from 'react';
   import { Container, Row, Col, Button } from 'react-bootstrap';
-  import p4 from "../media/p4.jpg"
-  import p2 from "../media/p2.jpg"
-  import p1 from "../media/p3.jpg"
   import { useMediaQuery } from 'react-responsive';
-  import { Link } from 'react-router-dom';
-  import sokoni from "../media/sokoni.png"
-  import cpg from "../media/cpg.png"
-  import digitallab from "../media/digitallab.png"
-  import graphix from "../media/graphix.png"
-  import mamaIq from "../media/mamaIq.png"
-  import techtips from "../media/techtips.png"
-  import civito from "../media/civito.png"
-  import mdada from "../media/mdada.png"
-  import bn1 from "../media/bn1.png"
-  import bn2 from "../media/bn2.png"
-  import bn3 from "../media/bn3.png"
-  import bn4 from "../media/bn4.png"
-  import bn5 from "../media/bn5.png"
-  import bn6 from "../media/bn6.png"
-  import bn7 from "../media/bn7.png"
-  import bn8 from "../media/bn8.png"
-  import bn9 from "../media/bn9.png"
-  import dl from "../media/dl.png"
-  function Dashboard() {
-    const isLargeScreen = useMediaQuery({ minWidth: 992 });
-    const containerRef = useRef(null);
+  import ImageComponent from '../components/ImageComponent';
 
+
+
+  function Dashboard() {
     const clients = [
-      { name: 'sokoni', logo: sokoni },
-      { name: 'cpg', logo: cpg },
-      { name: 'techtips', logo: techtips },
-      { name: 'civito', logo: civito},
-      { name: 'mamaIq', logo: mamaIq },
-      { name: 'graphix', logo: graphix},
+      { name: 'sokoni', logo: ''},
+      { name: 'cpg', logo: '' },
+      { name: 'techtips', logo: '' },
+      { name: 'civito', logo: ''},
+      { name: 'mamaIq', logo: ''},
+      { name: 'graphix', logo: ''},
     ];
     
     const [visibleClients, setVisibleClients] = useState(6);
@@ -65,32 +44,18 @@
       navigate("/contacts")
       scrollPageToTop();
     }
+
+    const isLargeScreen = useMediaQuery({ minWidth: 992 });
     return (
       <>
+      
         <section className="slideshow" style={{filter: "brightness(100%)",}}>
           
-          <Carousel interval={4000} data-bs-ride="carousel">
+        <Carousel interval={4000} data-bs-ride="carousel">
           <Carousel.Item>
   <div className="carousel-item-container">
-    <img
-      className="d-block"
-      src={bn1}
-      alt="Slide 0"
-      style={{ filter: "brightness(100%)", scale: "100%" }}
-    />
+     <ImageComponent name = 'carousel1.webp' alt = 'carousel1'/>
     <div className="carousel-caption">
-      <img
-        src={dl}
-        className="carousel-item-image"
-        style={{
-          filter: "brightness(100%)",
-          scale: isLargeScreen ? "60%" : "130%",
-          marginTop: isLargeScreen ? "350px" : "90px",
-          marginLeft: isLargeScreen ? "390px" : "105px",
-          transform: isLargeScreen ? "rotate(3deg)" : "rotate(3deg)",
-        }}
-        
-      />
     </div>
   </div>
 </Carousel.Item>
@@ -99,12 +64,7 @@
 
 
             <Carousel.Item>
-              <img
-                className="d-block"
-                src={bn6}
-                alt="Slide 1"
-                style={{ filter: "brightness(100%)" }}
-              />
+            <ImageComponent name = 'carousel2.webp'  alt = 'carousel2'/>
               {isLargeScreen ? (
           <Carousel.Caption style={{ marginTop: "200px" }}>
             
@@ -124,12 +84,7 @@
         )}
             </Carousel.Item>
             <Carousel.Item>
-              <img
-                className="d-block"
-                src={bn5}
-                alt="Slide 2"
-                style={{ filter: "brightness(60%)" }}
-              />
+            <ImageComponent name = 'carousel3.webp'  alt = 'carousel3'/>
               <Carousel.Caption style={{marginTop: isLargeScreen ? "200px" : undefined}}>
               { isLargeScreen ? (<h1 style={{color: "white"}}>
                 We empower clients and set new standards
@@ -142,12 +97,7 @@
               </Carousel.Caption> 
             </Carousel.Item>
             <Carousel.Item>
-              <img
-                className="d-block"
-                src={bn2}
-                alt="Slide 3"
-                style={{ filter: "brightness(80%)" }}
-              />
+            <ImageComponent name = 'carousel4.webp'  alt = 'carousel4'/>
               <Carousel.Caption  style={{marginTop: isLargeScreen ? "200px" : undefined}}>
                 { isLargeScreen ? (
                 <h1 style={{color: "white"}}>we drive digital growth and transformation</h1>
@@ -201,13 +151,16 @@
       <br />
     </div>
   </section>
-
+  <section className='container'>
+    
+  </section>
 
         <section className="content">
           <div className='row'>
             <div className='col-md-7'>
             
-              <img className="card-img img-fluid rounded-0 my-3" src={mdada} alt="Card Background"/>
+            <ImageComponent name = 'exceptional'  alt = 'exceptional'/>
+
         
         <br/>
             </div>
@@ -276,10 +229,10 @@
             </div>
             <div className='row'>
               <div className='col-md-4'>
-              <CustomModal name="sokoni" title="Sokoni" imageSource= {sokoni}
+              <CustomModal name="sokoni" title="Sokoni" imageSource= 'sokoni'
               description="An e-commerce in Dar es salaam" />
               </div> <br/><br/>
-              <div className='col-md-4'><CustomModal name="graphix" title="graphix centre" imageSource= {graphix}
+              <div className='col-md-4'><CustomModal name="graphix" title="graphix centre" imageSource= 'graphix'
               description="helping with graphic designing" /></div><br/><br/>
               <div className='col-md-4'>
               <button onClick={handleviewServices} className="btn btn-secondary" style={{backgroundColor: '#520B4D'}}>
@@ -302,7 +255,7 @@
             <div className='col-md-3 mb-4'>
               <div className='member-card'>
                 <div className='member-image'>
-                  <img src="https://shorturl.at/qzIJ0" alt='Member 1' style={{ maxWidth: '100%', maxHeight: '100%' }}  />
+                  <ImageComponent name = 'member1'  alt='Member 1' />
                   </div>
                   <div className='member-details'>
                     <h4>Member 1</h4>
@@ -315,7 +268,7 @@
                     <div className='col-md-3 mb-4'>
               <div className='member-card'>
                 <div className='member-image'>
-                  <img src="https://shorturl.at/gDS78" alt='Member 1' style={{ maxWidth: '100%', maxHeight: '100%' }}  />
+                  <ImageComponent name = 'member1' alt='Member 1'  />
                   </div>
                   <div className='member-details'>
                     <h4>Member 2</h4>
@@ -327,7 +280,7 @@
                     <div className='col-md-3 mb-4'>
               <div className='member-card'>
                 <div className='member-image'>
-                  <img src="https://shorturl.at/yCVX0" alt='Member 1' style={{ maxWidth: '100%', maxHeight: '100%' }}  />
+                  <ImageComponent name = 'member1' alt='Member 1' />
                   </div>
                   <div className='member-details'>
                     <h4>Member 3</h4>
@@ -337,18 +290,18 @@
                     </div>
                     </div>
                     <div className='col-md-3 mb-4'>
-              <div className='member-card'>
+                    <div className='member-card'>
                 <div className='member-image'>
-                  <img src="https://shorturl.at/awxyC" alt='Member 1' style={{ maxWidth: '100%', maxHeight: '100%' }}  />
+                  <ImageComponent name = 'member1' alt='Member 1' />
                   </div>
                   <div className='member-details'>
-                    <h4>Member 4</h4>
+                    <h4>Member 3</h4>
                     <p>Contact information</p>
-                    <p>Description of Member 4</p>
+                    <p>Description of Member 3</p>
                     </div>
                     </div>
                     </div>
-                    {/* Repeat the above structure for other members */}
+                    
                     </div>
 
 
@@ -363,11 +316,8 @@
         {clients.slice(0, visibleClients).map(client => (
           <Col key={client.name} xs={10} md={4} lg={4}>
             <div style={{backgroundColor: "black"}}>
-            <img
-            className="client-logo"
-            src={client.logo}
-            alt={client.name}
-            />
+           
+            <ImageComponent name = {client.name} alt={client.name} cls = "client-logo" />
             </div>
             <br/>
           </Col>
@@ -395,6 +345,7 @@
           </Container>
         </footer>
       </section>
+     
       </>
     );
   }

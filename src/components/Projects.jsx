@@ -1,51 +1,48 @@
-import React from 'react';
+import React, {useContext } from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import sokoni from "../media/sokoni.png"
-import cpg from "../media/cpg.png"
-import digitallab from "../media/digitallab.png"
-import graphix from "../media/graphix.png"
-import mamaIq from "../media/mamaIq.png"
-import techtips from "../media/techtips.png"
-import civito from "../media/civito.png"
+import ImageComponent from './ImageComponent';
 
 
 const Projects = () => {
+  
   const scrollPageToTop = () => {
     window.scrollTo(0, 0);
   };
   const projects = [
     {
-      name: '',
-      imageSource: sokoni,
+      name: 'SOKONI',
+      imageSource: 'sokoni',
       description: 'An e-commerce aiming to transform shopping experience in Dar es Salaam',
     },
     {
       name: 'CPG',
-      imageSource: cpg,
+      imageSource: 'cpg',
       description: 'Project Description 2',
     },
     {
       name: 'CIVITO COMPANY LIMITED',
-      imageSource: civito,
+      imageSource:  'civito',
       description: 'Project Description 3',
     },
     {
       name: 'TECH TIPS',
-      imageSource: techtips,
+      imageSource: 'techtips',
       description: 'Project Description 4',
     },
     {
       name: 'MAMA IQRAM COLLECTION',
-      imageSource: mamaIq,
+      imageSource: 'mamaIq',
       description: 'Project Description 4',
     },
     {
       name: 'GRAPHICS CENTRE',
-      imageSource: graphix,
+      imageSource: 'graphix',
       description: 'Project Description 4',
     },
   ];
+
+  
 
   return (
     <>
@@ -61,7 +58,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div className="col-md-4" key={index}>
               <div className="card">
-                <img className="card-img-top" src={project.imageSource} alt={project.name} style={{backgroundColor: "black"}}/>
+                <ImageComponent name = {project.imageSource}/>
                 <div className="card-body">
                   <h5 className="card-title">{project.name}</h5>
                   <p className="card-text">{project.description}</p>

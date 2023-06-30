@@ -1,19 +1,11 @@
-import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
-import mdada from "../media/mdada.png"
-import bn1 from "../media/bn1.png"
-import bn2 from "../media/bn2.png"
-import bn3 from "../media/bn3.png"
-import bn4 from "../media/bn4.png"
-import bn5 from "../media/bn5.png"
-import bn6 from "../media/bn6.png"
-import bn7 from "../media/bn7.png"
-import bn8 from "../media/bn8.png"
-import bn9 from "../media/bn9.png"
-import dl from "../media/dl.png"
+import React, {useContext, useState } from 'react';
+import ImageComponent from './ImageComponent';
+
 
 const Contacts = () => {
+  
 const serviceId = 'service_tyyy4kp';
 const templateId = 'template_yhjsukc';
 const userId = 'SmSgw9F01Mk2r-4jY';
@@ -151,13 +143,8 @@ const sendEmail = () => {
 <hr/>
       </form>
       </div>
-      <br/>
       <div className='col-md-6 container'>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-  <img src={mdada} className="img-fluid" alt="Image" />
+  <ImageComponent name ='exceptional.webp' cls="img-fluid" alt="Image" />
 </div>
 
       </div>

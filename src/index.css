@@ -267,7 +267,7 @@ h3 {
 }
 
 .background-section {
-  background-image: url('./media/bn8.png');
+  background-image: url('./media/bn8.webp');
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -283,7 +283,7 @@ h3 {
 }
 
 .background-image{
-  background-image: url('./media/bn7.png');
+  background-image: url('./media/bn7.webp');
   background-repeat: repeat;
   background-size: 100% auto;
   background-attachment: fixed;
@@ -452,6 +452,32 @@ h3 {
     margin-top: 0;
   }
 }
+
+.lazyload-placeholder {
+  filter: blur(20px); /* Initial blur effect */
+  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.lazyload-loaded {
+  filter: none; /* Remove the blur effect */
+  opacity: 1; /* Fade in the image */
+}
+.blurhash-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Maintain aspect ratio (e.g., 1:1 for a square) */
+  position: relative;
+}
+
+.blurhash-container > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
 
 
 

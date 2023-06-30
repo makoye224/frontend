@@ -1,22 +1,27 @@
-import React from 'react';
+import React, {useContext } from 'react';
 import { Container } from 'react-bootstrap';
+import ImageComponent from './components/ImageComponent';
+
 
 const SocialMedia = () => {
   const posts = [
     {
       platform: 'Facebook',
       content: 'This is a Facebook post.',
-      imageSource: 'https://tinyurl.com/53w5uedd',
+      name: 'carousel1.webp'
+      
     },
     {
       platform: 'Instagram',
       content: 'This is an Instagram post.',
-      imageSource: 'https://tinyurl.com/ycx7fzm6',
+      name: 'carousel3.webp'
+     
     },
     {
       platform: 'Twitter',
       content: 'This is a Twitter post.',
-      imageSource: 'https://tinyurl.com/3ftyypcp',
+      name: 'carousel2.webp'
+      
     },
   ];
 
@@ -33,7 +38,7 @@ const SocialMedia = () => {
             {posts.map((post, index) => (
               <div className="col-md-4" key={index}>
                 <div className="card">
-                  <img className="card-img-top" src={post.imageSource} alt={post.platform} />
+                  <ImageComponent cls="card-img-top" name = {post.name} alt={post.platform} />
                   <div className="card-body">
                     <h5 className="card-title">{post.platform}</h5>
                     <p className="card-text">{post.content}</p>

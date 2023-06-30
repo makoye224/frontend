@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
+import ImageComponent from './ImageComponent';
 
 function CustomModal(props) {
   const { name, title, imageSource, description } = props;
@@ -26,7 +27,8 @@ function CustomModal(props) {
         <Modal.Body>
           <Modal.Title></Modal.Title>
           <Container>
-          <img className='container-fluid client-logo' src={imageSource} alt="photo" style={{backgroundColor:"black"}}/>
+          
+          <ImageComponent cls='container-fluid client-logo' name={imageSource} alt="photo" styl={{backgroundColor:"black"}}/>
           <p>{description}</p>
           <div className="d-flex">
             <div className="d-flex justify-content-start" style={{ flex: '100%' }}></div>
@@ -44,4 +46,4 @@ function CustomModal(props) {
   );
 }
 
-export default connect()(CustomModal);
+export default CustomModal;

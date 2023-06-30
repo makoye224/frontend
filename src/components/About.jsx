@@ -1,15 +1,9 @@
-import React from 'react';
+import React, {useContext } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import bn1 from "../media/bn1.png"
-import bn2 from "../media/bn2.png"
-import bn3 from "../media/bn3.png"
-import bn4 from "../media/bn4.png"
-import bn5 from "../media/bn5.png"
-import bn6 from "../media/bn6.png"
-import bn7 from "../media/bn7.png"
-import bn8 from "../media/bn8.png"
-import bn9 from "../media/bn9.png"
+import ImageComponent from './ImageComponent';
+
+
 
 const About = () => {
   const scrollPageToTop = () => {
@@ -25,12 +19,11 @@ const About = () => {
         
       </header>
       <section className="about-section py-5 background-back">
-        <img
-          src="https://shorturl.at/yFVZ5"
+        <ImageComponent name = 'carousel2.webp'
           alt="Location"
-          className="img-fluid"
-          style={{ borderRadius: '50%', boxShadow: '0 0 20px rgba(0, 0, 0, 0.4)', width: '300px', height: '300px', objectFit: 'cover' }}
-        />
+          cls="img-fluid"
+          styl={{ borderRadius: '50%', boxShadow: '0 0 20px rgba(0, 0, 0, 0.4)', width: '300px', height: '300px', objectFit: 'cover' }}
+       />
         <div className="row my-5">
           <div className='container'>
             
@@ -45,10 +38,10 @@ const About = () => {
       <section className="about-section bg-gradient">
         <Row className="align-items-center">
           <Col md={6}>
-            <img
-              src={bn4}
+            <ImageComponent  
+              name = 'carousel1.webp'
               alt="About Image"
-              style={{ width: '100%', boxShadow: '0 0 20px rgba(0, 0, 0, 0.4)' }}
+              styl={{ width: '100%', boxShadow: '0 0 20px rgba(0, 0, 0, 0.4)' }}
             />
           </Col>
           <Col md={6}>

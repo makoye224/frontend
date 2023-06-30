@@ -1,7 +1,6 @@
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { FaShoppingCart, FaSignInAlt, FaSignOutAlt, FaUser, FaPowerOff, FaEnvelope, FaShoppingBasket, FaCartArrowDown, FaCartPlus } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
-import dl from "../media/dl.png"
 
 const NavBar = () => {
   return (
