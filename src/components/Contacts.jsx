@@ -1,7 +1,40 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import emailjs from 'emailjs-com';
+import mdada from "../media/mdada.png"
+import bn1 from "../media/bn1.png"
+import bn2 from "../media/bn2.png"
+import bn3 from "../media/bn3.png"
+import bn4 from "../media/bn4.png"
+import bn5 from "../media/bn5.png"
+import bn6 from "../media/bn6.png"
+import bn7 from "../media/bn7.png"
+import bn8 from "../media/bn8.png"
+import bn9 from "../media/bn9.png"
+import dl from "../media/dl.png"
 
 const Contacts = () => {
+const serviceId = 'service_tyyy4kp';
+const templateId = 'template_yhjsukc';
+const userId = 'SmSgw9F01Mk2r-4jY';
+
+const sendEmail = () => {
+  const templateParams = {
+    name: formData.name,
+    email: formData.email,
+    message: formData.message,
+  };
+
+  emailjs.send(serviceId, templateId, templateParams, userId)
+    .then((response) => {
+      console.log('Email sent successfully!', response.status, response.text);
+      // Handle success, e.g., show a success message to the user
+    })
+    .catch((error) => {
+      console.error('Error sending email:', error);
+      // Handle error, e.g., show an error message to the user
+    });
+};
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,6 +79,9 @@ const Contacts = () => {
       return;
     }
 
+    // Send the email
+    sendEmail();
+
     // Form is valid, handle form submission
     // Add your logic here
 
@@ -60,20 +96,28 @@ const Contacts = () => {
 
   return (
     <>
-    <section className="container-fluid text-center bg-dark text-white py-5">
-      <h2 className="mb-4">Contact Us</h2>
-      <p>Get in touch with us for any inquiries or collaborations.</p>
-      <div className="mb-4">
-        <h4>Email: info@digitallabs.com</h4>
-        <h4>Phone: +1 123-456-7890</h4>
-        <h4>Address: 123 Main Street, City, Country</h4>
+    <section className="container-fluid text-center text-white py-5 background-back">
+      
+      <div className='row' style={{color: "black"}}>
+        <div className='col-md-6 card container' >
+      <h2 className="mb-4 amazing-heading card-header">Contact Us</h2>
+      <h5 style={{color: "black"}}>Get in touch with us for any inquiries or collaborations</h5>
+      <br/>
+      <div className="mb-4" style={{color: "black"}}>
+      <h4>Email: <a href="mailto:digitallabtz@gmail.com">digitallabtz@gmail.com</a></h4>
+        <h4>Phone: +255 692-0833-236</h4>
+        <h4>Address: Dar es Salaam, Tanzania</h4>
+        <h4>Facebook: <a href = "#facebook" target="_blank" style={{color: "#520B4D", filter: "brightness(300%)"}} >Digital Lab</a></h4>
+        <h4>Instagram: <a href="https://www.instagram.com/digital_lab_tz/" target="_blank" rel="noopener noreferrer" style={{color: "#520B4D", filter: "brightness(300%)"}} >digital_lab_tz</a></h4>
+
+        
       </div>
       <form className="w-50 mx-auto" onSubmit={handleSubmit}>
         <div className="mb-3">
           <input
             type="text"
             className={`form-control ${formErrors.name ? 'is-invalid' : ''}`}
-            placeholder="Name"
+            placeholder="Full Name"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
@@ -101,19 +145,35 @@ const Contacts = () => {
           ></textarea>
           {formErrors.message && <div className="invalid-feedback">{formErrors.message}</div>}
         </div>
-        <button type="submit" className="btn btn-primary">Send Message</button>
+        <button type="submit" className="btn btn-secondary" onClick={handleSubmit} style={{backgroundColor: "#520B4D"}}>
+  Send Message
+</button>
+<hr/>
       </form>
-      
+      </div>
+      <br/>
+      <div className='col-md-6 container'>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+  <img src={mdada} className="img-fluid" alt="Image" />
+</div>
+
+      </div>
     </section>
     <hr className='background-image' style={{height: "20px"}}></hr>
     <section className="container-fluid text-center" style={{ backgroundColor: "#212529", color: "white" }}>
       <footer className="footer">
-        <Container>
+      <Container>
           <p>&copy; 2023 Digital Labs. All rights reserved.</p>
-          <p>Random content 1</p>
-          <p>Random content 2</p>
-          <p>Random content 3</p>
-          {/* Add more random content here */}
+          <h6>Email: digitallabtz@gmail.com</h6>
+        <h6>Phone: +255 692-0833-236</h6>
+        <h6>Address: Dar es Salaam, Tanzania</h6>
+        <h6>Facebook: <a href = "#facebook" target="_blank" >Digital Lab</a></h6>
+        <h6>Instagram: <a href="https://www.instagram.com/digital_lab_tz/" target="_blank" rel="noopener noreferrer">digital_lab_tz</a>
+        </h6>
+        <hr/>
         </Container>
       </footer>
     </section>

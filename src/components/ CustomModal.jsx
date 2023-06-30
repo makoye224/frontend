@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
+import { Container } from 'react-bootstrap';
 
 function CustomModal(props) {
   const { name, title, imageSource, description } = props;
@@ -14,7 +15,7 @@ function CustomModal(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button onClick={handleShow} style={{backgroundColor: '#520B4D'}}>
         {name}
       </Button>
 
@@ -24,12 +25,14 @@ function CustomModal(props) {
         </Modal.Header>
         <Modal.Body>
           <Modal.Title></Modal.Title>
-          <img className='container-fluid' src={imageSource} alt="photo" />
+          <Container>
+          <img className='container-fluid client-logo' src={imageSource} alt="photo" style={{backgroundColor:"black"}}/>
           <p>{description}</p>
           <div className="d-flex">
             <div className="d-flex justify-content-start" style={{ flex: '100%' }}></div>
             <div className="d-flex justify-content-end" style={{ flex: '100%' }}></div>
           </div>
+          </Container>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

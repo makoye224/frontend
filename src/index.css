@@ -216,7 +216,7 @@ h3 {
 .slideshow {
   position: relative;
   width: 100%;
-  height: 218px; 
+  max-height: 100%; 
   overflow: hidden;
 }
 
@@ -267,15 +267,25 @@ h3 {
 }
 
 .background-section {
-  background-image: url('https://shorturl.at/flGS3');
-  background-repeat: no-repeat;
+  background-image: url('./media/bn8.png');
+  background-repeat: repeat;
+  background-attachment: fixed;
   background-size: cover;
+  filter: brightness(1.0) contrast(1.2);
+  transition: filter 0.5s ease-in-out;
+}
+
+.background-back {
+  background-image: url('https://shorturl.at/eiACK');
+  background-repeat: repeat;
+  background-size: 100% auto;
   background-attachment: fixed;
 }
+
 .background-image{
-  background-image: url('https://shorturl.at/flGS3');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('./media/bn7.png');
+  background-repeat: repeat;
+  background-size: 100% auto;
   background-attachment: fixed;
 }
 .client-logo {
@@ -283,5 +293,173 @@ h3 {
   max-height: 100px;
   object-fit: contain;
 }
+.member-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.member-image img {
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover .member-image img {
+  transform: scale(1.1);
+}
+
+.member-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.member-card:hover .member-details {
+  opacity: 1;
+}
+
+.client-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border-radius: 5%;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+}
+
+.client-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+.client-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.client-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+  padding: 1000px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.client-item:hover .client-info {
+  opacity: 100;
+  visibility: visible;
+ 
+  
+}
+
+
+.sparky-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sparky-card:before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ffcc00, #ff9900, #ff6699, #cc66cc, #6699ff, #00ccff);
+  transform: translate(-50%, -50%) rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.sparky-card:hover {
+  transform: scale(1.5);
+}
+
+.sparky-card:hover:before {
+  opacity: 1;
+}
+
+@keyframes colorChange {
+  0% {
+    color: purple;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: yellowgreen;
+  }
+}
+
+.animated-word {
+  animation: colorChange 7s infinite;
+}
+
+.amazing-heading {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  /* Add more styles as desired */
+}
+.amazing-p {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: lowercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  /* Add more styles as desired */
+}
+
+@media (max-width: 768px) {
+  .carousel-item-container .carousel-caption {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .carousel-item-container .carousel-caption .carousel-item-image {
+   
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 

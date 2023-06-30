@@ -22,11 +22,12 @@ const SocialMedia = () => {
 
   return (
     <>
+    <div className ="background-image" >
       <Container>
-        <hr className='background-image' style={{ height: '25px' }}></hr>
+       <hr/>
         <section className="container-fluid text-center">
           <div>
-            <h2 style={{ color: 'purple' }}>Social Media Posts</h2>
+            <h2  style={{backgroundColor: "#520B4D"}}className="amazing-heading">Social Media Posts</h2>
           </div>
           <div className="row">
             {posts.map((post, index) => (
@@ -47,15 +48,19 @@ const SocialMedia = () => {
       <hr className='background-image' style={{ height: '5px' }}></hr>
       <section className="container-fluid text-center" style={{ backgroundColor: '#212529', color: 'white' }}>
         <footer className="footer">
-          <Container>
-            <p>&copy; 2023 Digital Labs. All rights reserved.</p>
-            <p>Random content 1</p>
-            <p>Random content 2</p>
-            <p>Random content 3</p>
-            {/* Add more random content here */}
-          </Container>
+        <Container>
+          <p>&copy; 2023 Digital Labs. All rights reserved.</p>
+          <h6>Email: digitallabtz@gmail.com</h6>
+        <h6>Phone: +255 692-0833-236</h6>
+        <h6>Address: Dar es Salaam, Tanzania</h6>
+        <h6>Facebook: <a href = "#facebook" target="_blank" >Digital Lab</a></h6>
+        <h6>Instagram: <a href="https://www.instagram.com/digital_lab_tz/" target="_blank" rel="noopener noreferrer">digital_lab_tz</a>
+        </h6>
+        <hr/>
+        </Container>
         </footer>
       </section>
+      </div>
     </>
   );
 }

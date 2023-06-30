@@ -15,7 +15,7 @@ function App() {
      
       <Router>
        
-        <div className='container-fluid' style={{backgroundColor: "	#212529"}}>
+        <div className='container-fluid' style={{backgroundColor: "#212529"}}>
           <NavBar />
           </div>
           <div>
