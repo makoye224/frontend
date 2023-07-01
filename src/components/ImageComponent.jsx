@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { Blurhash } from 'react-blurhash';
+import React, { useEffect, useState } from 'react';
+import blur from '../media/blur.webp'
 
 const ImageComponent = ({ alt, cls, styl, name }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -40,19 +40,14 @@ const ImageComponent = ({ alt, cls, styl, name }) => {
   return (
     <>
       {!imageLoaded && (
-        <Blurhash
-          hash='LKIF9|00Xoxtu6#%kDR*r;M_M|bc'
-          width='100%'
-          height='100%'
-          resolutionX={32}
-          resolutionY={32}
-          punch={1}
-        />
+        <div style={{ padding: '250px' }}>
+        <img src={blur} style={{ filter: 'blur(50px)' }} />
+      </div>      
       )}
       {imageLoaded && (
         <img
           className={cls ? cls : 'img-fluid'}
-          loading='lazy'
+          loading="lazy"
           src={imageUrl} // Update the src prop with imageUrl
           alt={alt}
           style={

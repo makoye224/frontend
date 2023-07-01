@@ -48,17 +48,12 @@
     const isLargeScreen = useMediaQuery({ minWidth: 992 });
     return (
       <>
-      
-        <section className="slideshow" style={{filter: "brightness(100%)",}}>
+        <section className="slideshow">
           
-        <Carousel interval={4000} data-bs-ride="carousel">
-          <Carousel.Item>
-  <div className="carousel-item-container">
-     <ImageComponent name = 'carousel1.webp' alt = 'carousel1'/>
-    <div className="carousel-caption">
-    </div>
-  </div>
-</Carousel.Item>
+        <Carousel interval={4000} data-bs-ride="carousel" >
+        <Carousel.Item >
+          <ImageComponent name="carousel1.webp" alt="carousel1" />
+    </Carousel.Item>
 
 
 
